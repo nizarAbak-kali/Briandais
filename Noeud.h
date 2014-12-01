@@ -10,24 +10,24 @@
 #include <iostream>
 using namespace std;
 
-struct noeud {
+typedef struct noeud {
     char cle;
     struct noeud * filsgauche;
     struct noeud * freredroit;
     
     void init_noeud(char c){
-        this->cle = c ;
+        cle = c ;
         this->filsgauche = NULL;
         this->freredroit = NULL;
     }
     
     void affiche_noeud(){
         cout<<this->cle<<endl;
+        
     }
 
-
-};
-    typedef struct noeud* arbre ;
+} noeud;
+    
 
 
 #endif	/* NOEUD_H */

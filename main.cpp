@@ -8,6 +8,7 @@
 #include <cstdlib>
 #include "Arbre.h"
 #include <string>
+#include <algorithm>
 using namespace std;
 
 /*
@@ -15,22 +16,24 @@ using namespace std;
  */
 
 
+
 int main(int argc, char** argv) {
-    arbre a = NULL ;
+    arbre a ,b,c ;
+    a = b = c = NULL ;
     //test de  l'arbre
-    char c = 'c';
+    char lettre = 'c';
     string s = "bidulepourtester";
     
-    if(!a)
-      a = (arbre)malloc(sizeof *a);
+    cout << "teste test : "+s << endl ;
     
-    for(int i = 0 ; i<s.size() ; i++)
-        ajouter_1noeudfilsgauche(a,s.at(i));
+    a = (arbre)malloc(sizeof *a);
     
+    for(int i = 0 ; i<s.size() ; i++){
+		cout<<s.at(i)<<endl;
+    }
+    affiche_arbre_prefixe(a,0);
         
-    
-    
-    
+  
     return 0;
 }
 
