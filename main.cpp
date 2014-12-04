@@ -26,11 +26,12 @@ int main(int argc, char** argv) {
     
     cout << "teste test : "+s << endl ;
     
-    a = (arbre)malloc(sizeof *a);
-    
     for(int i = 0 ; i<s.size() ; i++){
-		cout<<s.at(i)<<endl;
+        ajouter_1noeudfilsgauche(&a,s.at(i));
     }
+    puts("------------------------------- affichage infixe");
+    printTree(a);
+    puts("------------------------------- affichage prefixe");
     affiche_arbre_prefixe(a,0);
         
   

@@ -8,6 +8,7 @@
 #ifndef NOEUD_H
 #define	NOEUD_H
 #include <iostream>
+#include <stdio.h>
 using namespace std;
 
 typedef struct noeud {
