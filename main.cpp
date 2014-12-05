@@ -26,9 +26,11 @@ int main(int argc, char** argv) {
     
     cout << "teste test : "+s << endl ;
     
-    for(int i = 0 ; i<s.size() ; i++){
-        ajouter_1noeudfilsgauche(&a,s.at(i));
-    }
+//    for(int i = 0 ; i<s.size() ; i++){
+//        ajouter_1noeudfilsgauche(&a,s.at(i));
+//    }
+    ajoutermot(&a ,s,0);
+    
     puts("------------------------------- affichage infixe");
     printTree(a);
     puts("------------------------------- affichage prefixe");

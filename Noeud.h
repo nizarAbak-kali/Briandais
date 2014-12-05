@@ -7,6 +7,8 @@
 
 #ifndef NOEUD_H
 #define	NOEUD_H
+
+#define TEST 1
 #include <iostream>
 #include <stdio.h>
 using namespace std;

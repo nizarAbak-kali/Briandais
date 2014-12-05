@@ -39,14 +39,43 @@ void ajouter_1noeudfilsgauche(noeud **a,char c){
 	*a = elem ;
 }
 
-void ajouter_1noeudfreredroit(arbre a,char c){
-    arbre new_noeud = (arbre) malloc(sizeof *new_noeud);
+void ajoutermot(arbre *a,string mot,int cpt){
+    noeud* noeudTmp ;
+    noeud* arbreTmp = *a ;
     
-    new_noeud->init_noeud(c);
+    noeud* elem = (arbre) malloc(sizeof(*elem));
+    elem->cle = mot.at(0) ;
+    elem->filsgauche = NULL ;
+    elem->freredroit = NULL ;
     
-    a->freredroit = new_noeud;
+    if(TEST)
+        cout<< "on ajoute : "<< 
+        ;
+    
+    
+    //on boucle sur le mot 
+    for(int c = 1 ; c < mot.length(); c++){
+        
+    if (arbreTmp)
+        do{ 
+            noeudTmp = arbreTmp ;
+            if((int)c > (int)arbreTmp->cle){
+               
+                arbreTmp = arbreTmp->freredroit ;
+                if(!arbreTmp) noeudTmp->freredroit = elem ;
+            }
+            else{
+            
+                arbreTmp = arbreTmp->filsgauche ;
+                if(!arbreTmp) noeudTmp->filsgauche = elem ;
+            }
+	}
+	while(arbreTmp);
+    else
+	*a = elem ;
+    
+    }  
 }
-
 void affiche_arbre_prefixe(arbre a , int profondeur){
     if(!a) return ;
     else {
