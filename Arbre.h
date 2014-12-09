@@ -40,23 +40,57 @@ void ajouter_1noeudfilsgauche(noeud **a, char c) {
 void ajoutermot(arbre *a, string mot, int cpt) {
     noeud* noeudTmp;
     noeud* noeud_courant = *a;
+    int c = 0;
 
-    if (TEST)
-        cout << "on ajoute : " << elem->cle << endl ;
-           
-
-    //on boucle sur chaque lettre du mot . 
-    for (int c = c; c < mot.length(); c++) {
-        noeud* n = (arbre) malloc(sizeof (*n));
-        n->cle = mot.at(c);
-        n->filsgauche = NULL;
-        n->freredroit = NULL;
-        
-        //boucle ou je vais parcours les fils 
-        while(noeud_courant){
-          if(mot.at(c) == ){}  
+    if (!a) {
+        while (noeud_courant && c < mot.length()) {
+             noeud* n = (arbre) malloc(sizeof (*n));
+             n->cle = mot.at(c);
+             n->filsgauche = NULL;
+             n->freredroit = NULL;
+      
+             if(c == mot.length()-1){
+                 *noeud_courant = *n ;
+                 noeud_courant = noeud_courant->filsgauche ;
+             }
+             else{
+                 //if(){} chercher mot 
+                 
+             noeud_courant->filsgauche 
+             
+             }
+             
+           c++ ;
         }
+    }
+    else {
+        //boucle ou je vais parcours les fils 
+        while (noeud_courant && c < mot.length()) {
 
+            //penser au condition si on est la fin du mot  
+            if (mot.at(c) == noeud_courant->cle) {
+                noeud_courant = noeud_courant->filsgauche;
+            } else {
+                noeud* n = (arbre) malloc(sizeof (*n));
+                n->cle = mot.at(c);
+                n->filsgauche = NULL;
+                n->freredroit = NULL;
+
+                // on enrengistre la position precedente 
+                noeudTmp = noeud_courant;
+
+                // on parcours tout les frere 
+                while (noeud_courant->freredroit) {
+                    noeud_courant = noeud_courant->freredroit;
+                }
+                // on attache la cellule avec la nouvelle cle 
+                noeud_courant->freredroit = n;
+
+                noeud_courant = noeud_courant->freredroit;
+
+            }
+            c = c + 1;
+        }
     }
 }
 

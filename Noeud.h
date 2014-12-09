@@ -15,6 +15,7 @@ using namespace std;
 
 typedef struct noeud {
     char cle;
+    bool lastChar ;
     struct noeud * filsgauche;
     struct noeud * freredroit;
     
