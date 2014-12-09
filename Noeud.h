@@ -15,7 +15,7 @@ using namespace std;
 
 typedef struct noeud {
     char cle;
-    bool lastChar ;
+    bool lastChar = false ;
     struct noeud * filsgauche;
     struct noeud * freredroit;
     
@@ -29,7 +29,13 @@ typedef struct noeud {
         cout<<this->cle<<endl;
         
     }
-
+    
+    bool estunefeuille(){
+        if(this->filsgauche == NULL && this->freredroit == NULL)
+            return true ;
+        return false ;
+             
+    }
 } noeud;
     
 

@@ -18,23 +18,23 @@ using namespace std;
 
 
 int main(int argc, char** argv) {
-    arbre a ,b,c ;
-    a = b = c = NULL ;
+    arbre a = NULL ;
+    
     //test de  l'arbre
-    char lettre = 'c';
     string s = "bidulepourtester";
     
-    cout << "teste test : "+s << endl ;
+   
     
-//    for(int i = 0 ; i<s.size() ; i++){
-//        ajouter_1noeudfilsgauche(&a,s.at(i));
-//    }
+   for(int i = 0 ; i<s.length() ; i++){
+       cout << s[i]<<endl;
+    }
+    cout<< endl ;
     ajoutermot(&a ,s,0);
     
     puts("------------------------------- affichage infixe");
-    printTree(a);
+    printTree(*a);
     puts("------------------------------- affichage prefixe");
-    affiche_arbre_prefixe(a,0);
+    affiche_arbre_prefixe(*a,0);
         
   
     return 0;
